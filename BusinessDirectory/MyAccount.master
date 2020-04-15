@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MyAccount.master.cs" Inherits="MyAccount" %>
+
+<%@ Register Src="Controls/ucPageHeader.ascx" TagName="ucPageHeader" TagPrefix="uc1" %>
+<%@ Register Src="Controls/ucMessageBox.ascx" TagName="ucMessageBox" TagPrefix="uc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script type="text/javascript">
+        function expandPanelBar() {
+            var panel = document.getElementById("_panelbar");
+            var height = getDocHeight();
+
+            panel.style.height = height; 
+        }
+        //Get Max height of document
+        function getDocHeight() {
+                var D = document;
+                return Math.max(
+                                    Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
+                                    Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
+                                    Math.max(D.body.clientHeight, D.documentElement.clientHeight)
+                                );
+        }
+    </script>
+</head>
+<body onload="expandPanelBar()">
+    <form id="form1" runat="server">
+    <telerik:RadScriptManager ID="ScriptManager1" runat="server" EnableTheming="True">
+    </telerik:RadScriptManager>
+    <table style="width: 100%; text-align: center; overflow: auto;">
+        <tr>
+            <td>
+                <table style="width: 985px;" border="1px">
+                    <tr>
+                        <td style="height: 15px; text-align: left">
+                            welcome
+                            <asp:LoginName ID="LoginName1" runat="server" />
+                        </td>
+                        <td style="height: 15px; text-align: right">
+                            <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; width: 985px" colspan="2">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="vertical-align: top">
+                                        GoProGo.com
+                                    </td>
+                                    <td style="vertical-align: top">
+                                        <uc1:ucPageHeader ID="ucPageHeader1" runat="server" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 180px; vertical-align: top;">
+                                    <div id="_panelbar">
+                                        <telerik:RadPanelBar ID="RadPanelBar1" runat="server" 
+                                            PersistStateInCookie="True" >
+                                            <ExpandAnimation Type="InOutQuart" />
+                                        </telerik:RadPanelBar>
+                                        </div>
+                                    </td>
+                                    <td style="vertical-align: top">
+                                        <uc2:ucMessageBox ID="ucMessageBox1" runat="server" />
+                                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                        </asp:ContentPlaceHolder>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </form>
+    
+</body>
+</html>

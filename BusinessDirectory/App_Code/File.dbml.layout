@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="File">
+  <DataContextMoniker Name="/FileDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6fce394c-bdef-488e-a91d-ced3f9a7e76d" absoluteBounds="3.5, 1.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/FileDataContext/tblFileExtension" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a90685f0-6be5-4084-80c2-f4aaf7e517c0" absoluteBounds="3.515, 1.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="57a4e8c0-7e36-4794-9369-16fbfb7cadf0" absoluteBounds="0.75, 1.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/FileDataContext/tlkpFileExtensionType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="200f2b51-526b-4942-a65f-0545e40839a6" absoluteBounds="0.765, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a97b39e-ef7a-4f3b-98a1-faad516adaa1" absoluteBounds="6.25, 1, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/FileDataContext/tblFileInformation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6474543e-e410-4d54-a9c4-b2eed7db61e2" absoluteBounds="6.265, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="27be6cdb-4eee-435d-8b08-6c2cdef21f44" absoluteBounds="3.5, 5.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/FileDataContext/tlkpAccessType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="177bd69e-4dbc-42af-b6a2-98bf0b0acd21" absoluteBounds="3.515, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.34699625651042); (3.5 : 2.34699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FileDataContext/tlkpFileExtensionType/tlkpFileExtensionType_tblFileExtension" />
+      <nodes>
+        <classShapeMoniker Id="57a4e8c0-7e36-4794-9369-16fbfb7cadf0" />
+        <classShapeMoniker Id="6fce394c-bdef-488e-a91d-ced3f9a7e76d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.28929768880208); (6.25 : 2.28929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FileDataContext/tblFileExtension/tblFileExtension_tblFileInformation" />
+      <nodes>
+        <classShapeMoniker Id="6fce394c-bdef-488e-a91d-ced3f9a7e76d" />
+        <classShapeMoniker Id="9a97b39e-ef7a-4f3b-98a1-faad516adaa1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.95923076923077 : 3.73240397135417); (6.95923076923077 : 3.98240397135417); (7.55461538461539 : 3.98240397135417); (7.55461538461539 : 3.73240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FileDataContext/tblFileInformation/tblFileInformation_tblFileInformation" />
+      <nodes>
+        <classShapeMoniker Id="9a97b39e-ef7a-4f3b-98a1-faad516adaa1" />
+        <classShapeMoniker Id="9a97b39e-ef7a-4f3b-98a1-faad516adaa1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.34699625651042); (6.57336288461538 : 6.34699625651042); (6.57336288461538 : 3.73240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FileDataContext/tlkpAccessType/tlkpAccessType_tblFileInformation" />
+      <nodes>
+        <classShapeMoniker Id="27be6cdb-4eee-435d-8b08-6c2cdef21f44" />
+        <classShapeMoniker Id="9a97b39e-ef7a-4f3b-98a1-faad516adaa1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

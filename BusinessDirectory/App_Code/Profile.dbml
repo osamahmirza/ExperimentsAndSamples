@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="GOPROGO" EntityNamespace="GoProGo.Data.Entity.Profile" ContextNamespace="GoProGo.Data" Class="ProfileDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=Blackhole;Initial Catalog=GOPROGO;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="GOPROGOConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="PROFILE.tblActivationRequest" Member="tblActivationRequests">
+    <Type Name="tblActivationRequest">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsFulfilled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ActivationID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="tblProfile_tblActivationRequest" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tlkpSex" Member="tlkpSexes">
+    <Type Name="tlkpSex" Id="ID5">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpSex_tblProfile" Member="tblProfiles" ThisKey="ID" OtherKey="SexID" Type="tblProfile" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblAddressVerificationRequest" Member="tblAddressVerificationRequests">
+    <Type Name="tblAddressVerificationRequest">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VerificationCode" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsFulfilled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="tblProfile_tblAddressVerificationRequest" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblBillingAddress" Member="tblBillingAddresses">
+    <Type Name="tblBillingAddress">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AddressLine1" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="AddressLine2" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblProfile_tblBillingAddress" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblComplaint" Member="tblComplaints">
+    <Type Name="tblComplaint">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FromEmail" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FromIP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Subject" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblProfile_tblComplaint" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblFavourite" Member="tblFavourites">
+    <Type Name="tblFavourite">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FavProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblProfile_tblFavourite" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+      <Association Name="tblProfile_tblFavourite1" Member="tblProfile1" ThisKey="FavProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblInquiry" Member="tblInquiries">
+    <Type Name="tblInquiry">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNumber" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(2048) NOT NULL" CanBeNull="false" />
+      <Column Name="IsRead" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsReplied" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblProfile_tblInquiry" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblMemberShipType" Member="tblMemberShipTypes">
+    <Type Name="tblMemberShipType" Id="ID4">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="MaxInquiryCap" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaxFavouriteCap" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaxDemandCap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblMemberShipType_tblProfile" Member="tblProfiles" ThisKey="ID" OtherKey="MemberShipTypeID" Type="tblProfile" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblOffer" Member="tblOffers">
+    <Type Name="tblOffer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DemandID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferText" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNumber" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ValidUntil" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblProfile_tblOffer" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+      <Association Name="tblDemand_tblOffer" Member="tblDemand" ThisKey="DemandID" OtherKey="ID" Type="tblDemand" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblPersonality" Member="tblPersonalities">
+    <Type Name="tblPersonality">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RelationshipID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Languages" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="GrewUpTown" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="MissionStatement" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="FavQuote" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="Hobbies" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="Sports" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="FavBook" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="FavMovie" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="FavTvShow" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="tblProfile_tblPersonality" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+      <Association Name="tlkpRelationshipType_tblPersonality" Member="tlkpRelationshipType" ThisKey="RelationshipID" OtherKey="ID" Type="tlkpRelationshipType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblProfile" Member="tblProfiles">
+    <Type Name="tblProfile" Id="ID7">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SexID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RegionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Currency_CountryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JobUnitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RootFolderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="Slogan" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="AddressLine1" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="AddressLine2" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CellPhone" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Profile" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ProfileDescription" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="MinimumRate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RegistrationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hits" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsCompleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MemberShipTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SearchTags" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="NormalProfilePicture" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="SmallProfilePicture" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="ReviewCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReviewScore" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="tblProfile_tblActivationRequest" Member="tblActivationRequests" ThisKey="ID" OtherKey="ProfileID" Type="tblActivationRequest" />
+      <Association Name="tblProfile_tblAddressVerificationRequest" Member="tblAddressVerificationRequests" ThisKey="ID" OtherKey="ProfileID" Type="tblAddressVerificationRequest" />
+      <Association Name="tblProfile_tblBillingAddress" Member="tblBillingAddresses" ThisKey="ID" OtherKey="ProfileID" Type="tblBillingAddress" />
+      <Association Name="tblProfile_tblComplaint" Member="tblComplaints" ThisKey="ID" OtherKey="ProfileID" Type="tblComplaint" />
+      <Association Name="tblProfile_tblFavourite" Member="tblFavourites" ThisKey="ID" OtherKey="ProfileID" Type="tblFavourite" />
+      <Association Name="tblProfile_tblFavourite1" Member="tblFavourites1" ThisKey="ID" OtherKey="FavProfileID" Type="tblFavourite" />
+      <Association Name="tblProfile_tblInquiry" Member="tblInquiries" ThisKey="ID" OtherKey="ProfileID" Type="tblInquiry" />
+      <Association Name="tblProfile_tblOffer" Member="tblOffers" ThisKey="ID" OtherKey="ProfileID" Type="tblOffer" />
+      <Association Name="tblProfile_tblPersonality" Member="tblPersonalities" ThisKey="ID" OtherKey="ProfileID" Type="tblPersonality" />
+      <Association Name="tblProfile_tblTip" Member="tblTips" ThisKey="ID" OtherKey="ProfileID" Type="tblTip" />
+      <Association Name="tblProfile_tblTraffic" Member="tblTraffics" ThisKey="ID" OtherKey="ProfileID" Type="tblTraffic" />
+      <Association Name="tblProfile_tblDemand" Member="tblDemands" ThisKey="ID" OtherKey="ProfileID" Type="tblDemand" />
+      <Association Name="tblProfile_tblReview" Member="tblReviews" ThisKey="ID" OtherKey="ProfileID" Type="tblReview" />
+      <Association Name="tblProfile_tblReview1" Member="tblReviews1" ThisKey="ID" OtherKey="ReviewerProfileID" Type="tblReview" />
+      <Association Name="tblMemberShipType_tblProfile" Member="tblMemberShipType" ThisKey="MemberShipTypeID" OtherKey="ID" Type="tblMemberShipType" IsForeignKey="true" />
+      <Association Name="tlkpSex_tblProfile" Member="tlkpSex" ThisKey="SexID" OtherKey="ID" Type="tlkpSex" IsForeignKey="true" />
+      <Association Name="tlkpCategory_tblProfile" Member="tlkpCategory" ThisKey="CategoryID" OtherKey="ID" Type="tlkpCategory" IsForeignKey="true" />
+      <Association Name="tlkpJobUnit_tblProfile" Member="tlkpJobUnit" ThisKey="JobUnitID" OtherKey="ID" Type="tlkpJobUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblTips" Member="tblTips">
+    <Type Name="tblTip">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(4000) NOT NULL" CanBeNull="false" />
+      <Association Name="tblProfile_tblTip" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblTraffic" Member="tblTraffics">
+    <Type Name="tblTraffic">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IPAddress" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="UniqueSessionID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblProfile_tblTraffic" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tlkpCategory" Member="tlkpCategories">
+    <Type Name="tlkpCategory" Id="ID2">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Abbreviation" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Association Name="tlkpCategory_tblProfile" Member="tblProfiles" ThisKey="ID" OtherKey="CategoryID" Type="tblProfile" />
+      <Association Name="tlkpCategory_tblDemand" Member="tblDemands" ThisKey="ID" OtherKey="CategoryID" Type="tblDemand" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tlkpJobUnit" Member="tlkpJobUnits">
+    <Type Name="tlkpJobUnit" Id="ID3">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobUnit" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpJobUnit_tblProfile" Member="tblProfiles" ThisKey="ID" OtherKey="JobUnitID" Type="tblProfile" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tlkpRelationshipType" Member="tlkpRelationshipTypes">
+    <Type Name="tlkpRelationshipType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpRelationshipType_tblPersonality" Member="tblPersonalities" ThisKey="ID" OtherKey="RelationshipID" Type="tblPersonality" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.vwDemand" Member="vwDemands">
+    <Type Name="vwDemand" Id="ID11">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JobUnitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryID_CurrencyCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LocationCountryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LocationRegionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LocationCityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PostingEndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ExpectedEngagementDuration" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="AllowAnonymousOffer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="DemandTypeName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="IsAnonymousOffer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MinimumBudget" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="MaxBudget" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="JobUnitName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CurrencyCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LocationCountry" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LocationRegion" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LocationCity" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.vwSupply" Member="vwSupplies">
+    <Type Name="vwSupply" Id="ID1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileDescription" Type="System.String" DbType="NVarChar(2048)" CanBeNull="true" />
+      <Column Name="Profile" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.vwFavourite" Member="vwFavourites">
+    <Type Name="vwFavourite" Id="ID6">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FavProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SmallProfilePicture" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="MinimumRate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="JobUnit" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CurrencyCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="IsLive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.vwSummary" Member="vwSummaries">
+    <Type Name="vwSummary" Id="ID8">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="CellPhone" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Slogan" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="AddressLine1" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="AddressLine2" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ProfileDescription" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="MinimumRate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SmallProfilePicture" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="NormalProfilePicture" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="ReviewCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReviewScore" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="JobUnitName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MembershipTypeName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="SexName" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="CurrencyCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.vwReview" Member="vwReviews">
+    <Type Name="vwReview" Id="ID9">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReviewerProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="SmallProfilePicture" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="IPAddress" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Score" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Review" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.vwPersonality" Member="vwPersonalities">
+    <Type Name="vwPersonality" Id="ID10">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RelationshipID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Languages" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="GrewUpTown" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="MissionStatement" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="FavQuote" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="Hobbies" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="Sports" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="FavBook" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="FavMovie" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="FavTvShow" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="RelationshipType" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblDemand" Member="tblDemands">
+    <Type Name="tblDemand" Id="ID12">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="DescriptionPlainText" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchTags" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="OfferCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DemandTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TimeConstraint" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsAnonymousOffer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MinBudget" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="MaxBudget" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="JobUnitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryID_CurrencyCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryID_Location" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RegionID_Location" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CityID_Location" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblDemand_tblOffer" Member="tblOffers" ThisKey="ID" OtherKey="DemandID" Type="tblOffer" />
+      <Association Name="tblProfile_tblDemand" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+      <Association Name="tlkpCategory_tblDemand" Member="tlkpCategory" ThisKey="CategoryID" OtherKey="ID" Type="tlkpCategory" IsForeignKey="true" />
+      <Association Name="tlkpDemandType_tblDemand" Member="tlkpDemandType" ThisKey="DemandTypeID" OtherKey="ID" Type="tlkpDemandType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tlkpDemandType" Member="tlkpDemandTypes">
+    <Type Name="tlkpDemandType" Id="ID13">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Association Name="tlkpDemandType_tblDemand" Member="tblDemands" ThisKey="ID" OtherKey="DemandTypeID" Type="tblDemand" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tblReview" Member="tblReviews">
+    <Type Name="tblReview">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReviewerProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IPAddress" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Score" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Review" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ReviewStatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="tblProfile_tblReview" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+      <Association Name="tblProfile_tblReview1" Member="tblProfile1" ThisKey="ReviewerProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+      <Association Name="tlkpReviewStatus_tblReview" Member="tlkpReviewStatus" ThisKey="ReviewStatusID" OtherKey="ID" Type="tlkpReviewStatus" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="PROFILE.tlkpReviewStatus" Member="tlkpReviewStatus">
+    <Type Name="tlkpReviewStatus">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Association Name="tlkpReviewStatus_tblReview" Member="tblReviews" ThisKey="ID" OtherKey="ReviewStatusID" Type="tblReview" />
+    </Type>
+  </Table>
+  <Function Name="PROFILE.GetSupplyByProfileID" Method="GetSupplyByProfileID">
+    <Parameter Name="ProfileID" Parameter="profileID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="PROFILE.GetAllCategories" Method="GetAllCategories">
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="PROFILE.GetAllJobUnits" Method="GetAllJobUnits">
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="PROFILE.GetAllMembershipTypes" Method="GetAllMembershipTypes">
+    <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="PROFILE.GetAllSexes" Method="GetAllSexes">
+    <ElementType IdRef="ID5" />
+  </Function>
+  <Function Name="PROFILE.GetCategoriesByName" Method="GetCategoriesByName">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(64)" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="PROFILE.GetCategoryByID" Method="GetCategoryByID">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="PROFILE.GetFavourites" Method="GetFavourites">
+    <Parameter Name="ProfileID" Parameter="profileID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="PROFILE.GetJobUnitByID" Method="GetJobUnitByID">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="PROFILE.GetProfileByID" Method="GetProfileByID">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID7" />
+  </Function>
+  <Function Name="PROFILE.GetProfileByUserID" Method="GetProfileByUserID">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType IdRef="ID7" />
+  </Function>
+  <Function Name="PROFILE.ForwardInquiriesToEmail" Method="ForwardInquiriesToEmail">
+    <Parameter Name="ProfileID" Parameter="profileID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDs" Parameter="iDs" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="PROFILE.GetSummaryByProfileID" Method="GetSummaryByProfileID">
+    <Parameter Name="ProfileID" Parameter="profileID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID8" />
+  </Function>
+  <Function Name="PROFILE.GetReviewByProfileID" Method="GetReviewByProfileID">
+    <Parameter Name="ProfileID" Parameter="profileID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageNum" Parameter="pageNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalRowCount" Parameter="totalRowCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID9" />
+  </Function>
+  <Function Name="PROFILE.GetPersonalityByProfileID" Method="GetPersonalityByProfileID">
+    <Parameter Name="ProfileID" Parameter="profileID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID10" />
+  </Function>
+  <Function Name="PROFILE.GetDemandByID" Method="GetDemandByID">
+    <Parameter Name="DemandID" Parameter="demandID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID11" />
+  </Function>
+  <Function Name="PROFILE.GetDemandByProfileID" Method="GetDemandByProfileID">
+    <Parameter Name="ProfileID" Parameter="profileID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageNum" Parameter="pageNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalRowCount" Parameter="totalRowCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID11" />
+  </Function>
+  <Function Name="PROFILE.GetDemandDescriptionByID" Method="GetDemandDescriptionByID">
+    <Parameter Name="DemandID" Parameter="demandID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID12" />
+  </Function>
+  <Function Name="PROFILE.GetAllDemandTypes" Method="GetAllDemandTypes">
+    <ElementType IdRef="ID13" />
+  </Function>
+</Database>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="GOPROGO" EntityNamespace="GoProGo.Data.Entity.Geo" ContextNamespace="GoProGo.Data" Class="GeoDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=Blackhole;Initial Catalog=GOPROGO;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="GOPROGOConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="GEO.tblCity" Member="tblCities">
+    <Type Name="tblCity" Id="ID1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Lattitude" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeZone" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DMAID" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Association Name="tblCountry_tblCity" Member="tblCountry" ThisKey="CountryID" OtherKey="ID" Type="tblCountry" IsForeignKey="true" />
+      <Association Name="tblRegion_tblCity" Member="tblRegion" ThisKey="RegionID" OtherKey="ID" Type="tblRegion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="GEO.tblCountry" Member="tblCountries">
+    <Type Name="tblCountry" Id="ID3">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FIPS104" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="ISO2" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="ISO3" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="ISON" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Internet" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="Capital" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MapReference" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NationalitySingular" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NationalityPlural" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Currency" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CurrencyCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Population" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsEnabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Flag" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="IsZipSearchAllowed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tblCountry_tblCity" Member="tblCities" ThisKey="ID" OtherKey="CountryID" Type="tblCity" />
+      <Association Name="tblCountry_tblRegion" Member="tblRegions" ThisKey="ID" OtherKey="CountryID" Type="tblRegion" />
+    </Type>
+  </Table>
+  <Table Name="GEO.tblRegion" Member="tblRegions">
+    <Type Name="tblRegion" Id="ID2">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="ADM1Code" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="IsEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tblRegion_tblCity" Member="tblCities" ThisKey="ID" OtherKey="RegionID" Type="tblCity" />
+      <Association Name="tblCountry_tblRegion" Member="tblCountry" ThisKey="CountryID" OtherKey="ID" Type="tblCountry" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="GEO.GetAllCitites" Method="GetAllCitites">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="GEO.GetRegionsByNameAndCountryID" Method="GetRegionsByNameAndCountryID">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(64)" />
+    <Parameter Name="CountryID" Parameter="countryID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="GEO.GetAllCountries" Method="GetAllCountries">
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="GEO.GetAllRegions" Method="GetAllRegions">
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="GEO.GetCitiesByNameAndRegionID" Method="GetCitiesByNameAndRegionID">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(64)" />
+    <Parameter Name="RegionID" Parameter="regionID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="GEO.GetCityByID" Method="GetCityByID">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="GEO.GetCityByRegion" Method="GetCityByRegion">
+    <Parameter Name="RegionID" Parameter="regionID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="GEO.GetCityByRegionAndCity" Method="GetCityByRegionAndCity">
+    <Parameter Name="RegionID" Parameter="regionID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="GEO.GetCountriesByName" Method="GetCountriesByName">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(64)" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="GEO.GetCountryByCountry" Method="GetCountryByCountry">
+    <Parameter Name="Country" Parameter="country" Type="System.String" DbType="VarChar(255)" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="GEO.GetCountryByID" Method="GetCountryByID">
+    <Parameter Name="CountryID" Parameter="countryID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="GEO.GetEnabledCountries" Method="GetEnabledCountries">
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="GEO.GetEnabledCountriesByName" Method="GetEnabledCountriesByName">
+    <Parameter Name="Country" Parameter="country" Type="System.String" DbType="NVarChar(64)" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="GEO.GetRegionByCountry" Method="GetRegionByCountry">
+    <Parameter Name="CountryID" Parameter="countryID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="GEO.GetRegionByCountryAndRegion" Method="GetRegionByCountryAndRegion">
+    <Parameter Name="CountryID" Parameter="countryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Region" Parameter="region" Type="System.String" DbType="VarChar(255)" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="GEO.GetRegionByID" Method="GetRegionByID">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID2" />
+  </Function>
+</Database>

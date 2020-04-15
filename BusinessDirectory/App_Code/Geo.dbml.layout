@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Geo">
+  <DataContextMoniker Name="/GeoDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8700d99c-aaa7-439d-a16c-29e73207ee6b" absoluteBounds="6.25, 2.375, 2, 2.2465844726562505">
+      <DataClassMoniker Name="/GeoDataContext/tblCity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b388685f-2041-4b34-b35e-078cec34de20" absoluteBounds="6.265, 2.835, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19aa3fde-7da9-4dbb-bcc4-d32f9d6e84f8" absoluteBounds="0.75, 1.5, 2, 3.8900577799479161">
+      <DataClassMoniker Name="/GeoDataContext/tblCountry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="23d0c419-89f3-44fd-9f66-fff7ed1c78ab" absoluteBounds="0.765, 1.96, 1.9700000000000002, 3.3300577799479165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="edda81a2-a6ac-4403-affe-79cc1706f83e" absoluteBounds="3.5, 2.5, 2, 1.7535424804687505">
+      <DataClassMoniker Name="/GeoDataContext/tblRegion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8f818ea-2004-43c1-bb72-e1c2978e68ab" absoluteBounds="3.515, 2.96, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.4688134765625); (6.25 : 4.4688134765625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoDataContext/tblCountry/tblCountry_tblCity" />
+      <nodes>
+        <classShapeMoniker Id="19aa3fde-7da9-4dbb-bcc4-d32f9d6e84f8" />
+        <classShapeMoniker Id="8700d99c-aaa7-439d-a16c-29e73207ee6b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.37677124023438); (6.25 : 3.37677124023438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoDataContext/tblRegion/tblRegion_tblCity" />
+      <nodes>
+        <classShapeMoniker Id="edda81a2-a6ac-4403-affe-79cc1706f83e" />
+        <classShapeMoniker Id="8700d99c-aaa7-439d-a16c-29e73207ee6b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.37677124023438); (3.5 : 3.37677124023438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoDataContext/tblCountry/tblCountry_tblRegion" />
+      <nodes>
+        <classShapeMoniker Id="19aa3fde-7da9-4dbb-bcc4-d32f9d6e84f8" />
+        <classShapeMoniker Id="edda81a2-a6ac-4403-affe-79cc1706f83e" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,10 @@
+﻿body 
+{
+    margin: 0;
+    font-family: Arial;
+    font-size: small;
+}
+.TextBold
+{
+	font-weight:bold; 
+}

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PanelBar>
+  <Item Text="Profile" Expanded="True" >
+    <Item Text="Personal Info" NavigateUrl="~/SharedProtected/PersonalInfo.aspx"/>
+    <Item Text="Address" NavigateUrl="~/SharedProtected/Address.aspx"/>
+    <Item Text="Financial" NavigateUrl="~/SharedProtected/Financial.aspx"/>
+    <Item Text="Marketing" NavigateUrl="~/SharedProtected/Marketing.aspx"/>
+    <Item Text="Profile" NavigateUrl="~/SharedProtected/Profile.aspx" />
+    <Item Text="Profile Picture" NavigateUrl="~/SharedProtected/ProfilePicture.aspx"/>
+    <Item Text="Change Password" NavigateUrl="~/SharedProtected/ChangePassword.aspx"/>
+    <Item Text="Email Address" NavigateUrl="~/SharedProtected/EmailAddress.aspx"/>
+    <!--Activated only with diamond membership, quota 10 pictures-->
+    <Item Text="Gallary" NavigateUrl="~/SharedProtected/Gallary.aspx" Visible="False"/>
+    <!--Activated only with Diamond membership-->
+    <Item Text="Services" NavigateUrl="~/SharedProtected/Services.aspx" Visible="False"/>
+  </Item>
+  <Item Text="Profile Activity" Expanded="True">
+    <!--Standard 10 max, diamond 100-->
+    <Item Text="Inquiries" NavigateUrl="~/SharedProtected/Inquiries.aspx"/>
+    <!--Total number of hits, Traffic data will be available right from this page-->
+    <Item Text="Profile Hits" NavigateUrl="~/SharedProtected/Hits.aspx"/>
+    <!--No limit for any user-->
+    <Item Text="Favourites" NavigateUrl="~/SharedProtected/Favourites.aspx"/>
+    
+  </Item>
+  <!--Make following item hidden, phase 2 after launch once there is some traffic-->
+  <!--No advertisements in the begining-->
+  <Item Text="Advertise" Expanded="True" Visible="False">
+    <!--Keep it Pre Paid in the begining-->
+    <!--Note: Maintain total number of clicks for each category in seperate table for each profile in a seperate database every click will add a new record with date and display location for one month only-->
+    <!--Invoices will be maintained in main same database-->
+    <!--In the begining don't save credit cards and use PayPal standard-->
+    <!--Use paypal Pro/Standard shopping cart-->
+    <!--localize advertisments by user permission-->
+    
+    <!--Highlighted un-limited listings, double traffic, double inquiries  $10 per month-->
+    <Item Text="Diamond membership" />
+    <!--Give them three packages $30 $60 $90 and ask maximum clicks per day c50 per click-->
+    <Item Text="Mainpage Side" />
+    <!--Give them three packages $60 $90 $120 and ask maximum clicks per day c70 per click-->
+    <Item Text="In Profiles" />
+    <!--Give them three packages $60 $90 $120 and ask maximum clicks per day $1 per click-->
+    <Item Text="Mainpage Banner" />
+    <Item Text="Why Advertise here?" />
+  </Item>
+  <Item Text="Billing" Expanded="True" Visible="False">
+    <!--Have a pay button on invoice if using pay pal pro shopping cart-->
+    <Item Text="Invoices" />
+  </Item>
+  <Item Text="Services" Expanded="True" Visible="False">
+    <!--Verify address through postal mail. On every address save flag address as to be verified and also give user notification to verify their address. You can do it twice a year for free, 
+    after that it will be for $1-->
+    <Item Text="Address Verification(Free)" Visibile="False"/>
+    <!--Over here they will be seeing their SMS usage, SMS are sent on each incomming inquiry, Will be able to buy SMS Credits-->
+    <Item Text="SMS Credits" Visible="False"/>
+  </Item>
+</PanelBar>
+

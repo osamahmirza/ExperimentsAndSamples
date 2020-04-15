@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PublicProfile.master.cs"
+    Inherits="PubProfile" %>
+
+<%@ Register Src="Controls/ucPageHeader.ascx" TagName="ucPageHeader" TagPrefix="uc1" %>
+<%@ Register Src="Controls/ucMessageBox.ascx" TagName="ucMessageBox" TagPrefix="uc2" %>
+<%@ Register Src="Controls/ucPubProf_ProfileSummary.ascx" TagName="ucPubProf_ProfileSummary"
+    TagPrefix="uc3" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title runat="server"></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnableTheming="True">
+    </telerik:RadScriptManager>
+    <div>
+        <uc3:ucPubProf_ProfileSummary ID="ucPubProf_ProfileSummary1" runat="server" />
+        <telerik:RadTabStrip ID="RadTabStrip1" runat="server" MultiPageID="RadMultiPage1">
+            <Tabs>
+                <telerik:RadTab runat="server" NavigateUrl="PersonSupply.aspx?ProfileID={0}" Text="Service(s) I Provide">
+                </telerik:RadTab>
+                <telerik:RadTab runat="server" NavigateUrl="PersonDemand.aspx?ProfileID={0}" Text="Service(s) I Want">
+                </telerik:RadTab>
+                <telerik:RadTab runat="server" NavigateUrl="PersonPersonality.aspx?ProfileID={0}"
+                    Text="My Personality">
+                </telerik:RadTab>
+                <telerik:RadTab runat="server" NavigateUrl="PersonReviews.aspx?ProfileID={0}" Text="Reviews">
+                </telerik:RadTab>
+                <telerik:RadTab runat="server" NavigateUrl="PersonContact.aspx?ProfileID={0}" Text="Contact Me Now">
+                </telerik:RadTab>
+            </Tabs>
+        </telerik:RadTabStrip>
+        <uc1:ucPageHeader ID="ucPageHeader1" runat="server" />
+        <uc2:ucMessageBox ID="ucMessageBox1" runat="server" />
+        <div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

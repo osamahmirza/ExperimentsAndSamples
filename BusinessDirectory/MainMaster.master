@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMaster.master.cs"
+    Inherits="SimpleMaster" %>
+
+<%@ Register Src="Controls/ucMessageBox.ascx" TagName="ucMessageBox" TagPrefix="uc1" %>
+<%@ Register Src="Controls/ucPageHeader.ascx" TagName="ucPageHeader" TagPrefix="uc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <%--This master page will be used for Login or Forget password page or any other simple job, like contact us--%>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnableTheming="True">
+    </telerik:RadScriptManager>
+    <div style="margin: 0px; padding: 0px">
+        <table style="width: 985px; height: auto; margin-left: auto; margin-right: auto;
+            margin-top: 0px">
+            <tr>
+                <td style="text-align: left">
+                    <a href="CreateAccount.aspx">Join its free!</a> | <a href="ServiceBrowsing/CategoryBrowsing.aspx">Service Providers</a> | <a href="DemandBrowsing/CategoryBrowsing.aspx">Service Demands</a>
+                </td>
+                <td style="text-align: right">
+                    <asp:LoginName ID="LoginName1" runat="server" />
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                    <asp:HyperLink ID="hlMyAccount" runat="server" NavigateUrl="~/SharedProtected/Profile.aspx" Text="My Account"></asp:HyperLink>
+                </td>
+            </tr>
+        </table>
+        <table style="margin-left: auto; margin-right: auto; width: 985px; height: auto;">
+            <tr>
+                <td style="vertical-align: top; text-align: center;">
+                    <div>
+                        <table style="margin-left: auto; margin-right: auto">
+                            <tr>
+                                <td>
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

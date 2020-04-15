@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="GOPROGO" Class="SearchDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=Blackhole;Initial Catalog=GOPROGO;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="GOPROGOConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="SEARCH.vwSearchEnt" Member="vwSearchEnts">
+    <Type Name="vwSearchEnt" Id="ID1">
+      <Column Name="CityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SexID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RegionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Currency_CountryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JobUnitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="Slogan" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="AddressLine1" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="AddressLine2" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ProfileDescription" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="MinimumRate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SmallProfilePicture" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReviewCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReviewScore" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="JobUnitName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MembershipTypeName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="SexName" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="CurrencyCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Distance" Type="System.Decimal" DbType="Decimal(4,4) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SEARCH.vwDemandSearchEnt" Member="vwDemandSearchEnts">
+    <Type Name="vwDemandSearchEnt" Id="ID2">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CityID_Location" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RegionID_Location" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryID_Location" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CountryID_CurrencyCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DemandTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JobUnitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="DescriptionPlainText" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="OfferCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TimeConstraint" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsAnonymousOffer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MinBudget" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="MaxBudget" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CityName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RegionName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CountryName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CurrencyCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="DemandTypeName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="JobUnit" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="SEARCH.ProfileByCategoryAndCityID" Method="ProfileByCategoryAndCityID">
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageNum" Parameter="pageNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalRowCount" Parameter="totalRowCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="SEARCH.ProfileSearchCategory" Method="ProfileSearchCategory">
+    <Parameter Name="Criteria" Parameter="criteria" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageNum" Parameter="pageNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalRowCount" Parameter="totalRowCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="SEARCH.ProfileSearchDistance" Method="ProfileSearchDistance">
+    <Parameter Name="Criteria" Parameter="criteria" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="Lat" Parameter="lat" Type="System.Double" DbType="Float" />
+    <Parameter Name="Long" Parameter="long" Type="System.Double" DbType="Float" />
+    <Parameter Name="IsKM" Parameter="isKM" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageNum" Parameter="pageNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalRowCount" Parameter="totalRowCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="SEARCH.ProfileSearchMain" Method="ProfileSearchMain">
+    <Parameter Name="Criteria" Parameter="criteria" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageNum" Parameter="pageNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalRowCount" Parameter="totalRowCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="SEARCH.ProfileSearchName" Method="ProfileSearchName">
+    <Parameter Name="FirstName" Parameter="firstName" Type="System.String" DbType="NVarChar(64)" />
+    <Parameter Name="LastName" Parameter="lastName" Type="System.String" DbType="NVarChar(64)" />
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageNum" Parameter="pageNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalRowCount" Parameter="totalRowCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="SEARCH.DemandSearchMain" Method="DemandSearchMain">
+    <Parameter Name="Criteria" Parameter="criteria" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageNum" Parameter="pageNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalRowCount" Parameter="totalRowCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="SEARCH.DemandByCityIDAndCategoryID" Method="DemandByCityIDAndCategoryID">
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageNum" Parameter="pageNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalRowCount" Parameter="totalRowCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="SEARCH.DemandByCityIDAndCategoryIDAndDemandTypeID" Method="DemandByCityIDAndCategoryIDAndDemandTypeID">
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DemandTypeID" Parameter="demandTypeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageNum" Parameter="pageNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalRowCount" Parameter="totalRowCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="SEARCH.DemandSearchCategory" Method="DemandSearchCategory">
+    <Parameter Name="Criteria" Parameter="criteria" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageNum" Parameter="pageNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalRowCount" Parameter="totalRowCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="SEARCH.DemandSearchDemandType" Method="DemandSearchDemandType">
+    <Parameter Name="Criteria" Parameter="criteria" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DemandTypeID" Parameter="demandTypeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageNum" Parameter="pageNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalRowCount" Parameter="totalRowCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType IdRef="ID2" />
+  </Function>
+</Database>
