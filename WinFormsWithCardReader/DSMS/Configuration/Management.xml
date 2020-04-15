@@ -1,0 +1,126 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:UltraExplorerBarStreamer id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Groups href="#ref-4"/>
+<GroupSettings href="#ref-5"/>
+<Margins href="#ref-6"/>
+<Style>3</Style>
+<ViewStyle>6</ViewStyle>
+</a1:UltraExplorerBarStreamer>
+<a1:UltraExplorerBarGroupsCollection id="ref-4" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Count>5</Count>
+<_x0030_ href="#ref-7"/>
+<_x0031_ href="#ref-8"/>
+<_x0032_ href="#ref-9"/>
+<_x0033_ href="#ref-10"/>
+<_x0034_ href="#ref-11"/>
+</a1:UltraExplorerBarGroupsCollection>
+<a1:UltraExplorerBarGroupSettings id="ref-5" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Style>2</Style>
+</a1:UltraExplorerBarGroupSettings>
+<a2:Margins id="ref-6" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics2.Win.v8.1">
+<LeftDefault>-1</LeftDefault>
+<TopDefault>-1</TopDefault>
+<RightDefault>-1</RightDefault>
+<BottomDefault>-1</BottomDefault>
+<Left>4</Left>
+<Top>0</Top>
+<Right>0</Right>
+<Bottom>0</Bottom>
+</a2:Margins>
+<a1:UltraExplorerBarGroup id="ref-7" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Items href="#ref-12"/>
+<Key id="ref-13">Student</Key>
+<Text id="ref-14">Student</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarGroup id="ref-8" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Items href="#ref-15"/>
+<Key id="ref-16">Instructor</Key>
+<Text id="ref-17">Instructor</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarGroup id="ref-9" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Items href="#ref-18"/>
+<Text id="ref-19">Session</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarGroup id="ref-10" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Items href="#ref-20"/>
+<Key id="ref-21">In Car Bookings</Key>
+<Text id="ref-22">In Car Booking</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarGroup id="ref-11" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Items href="#ref-23"/>
+<Key id="ref-24">Survey</Key>
+<Text id="ref-25">Survey</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarItemsCollection id="ref-12" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Count>2</Count>
+<_x0030_ href="#ref-26"/>
+<_x0031_ href="#ref-27"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarItemsCollection id="ref-15" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Count>2</Count>
+<_x0030_ href="#ref-28"/>
+<_x0031_ href="#ref-29"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarItemsCollection id="ref-18" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Count>3</Count>
+<_x0030_ href="#ref-30"/>
+<_x0031_ href="#ref-31"/>
+<_x0032_ href="#ref-32"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarItemsCollection id="ref-20" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Count>2</Count>
+<_x0030_ href="#ref-33"/>
+<_x0031_ href="#ref-34"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarItemsCollection id="ref-23" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Count>2</Count>
+<_x0030_ href="#ref-35"/>
+<_x0031_ href="#ref-36"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarItem id="ref-26" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Text id="ref-37">New Student</Text>
+<Key id="ref-38">New Student</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-27" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Text id="ref-39">Students</Text>
+<Key id="ref-40">Students</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-28" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Text id="ref-41">New Instructor</Text>
+<Key id="ref-42">New Instructor</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-29" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Text id="ref-43">Instructors</Text>
+<Key id="ref-44">Instructors</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-30" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Text id="ref-45">New Session</Text>
+<Key id="ref-46">New Session</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-31" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Text id="ref-47">Sessions</Text>
+<Key id="ref-48">Sessions</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-32" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Text id="ref-49">Session Schedule</Text>
+<Key id="ref-50">Session Schedule</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-33" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Text id="ref-51">Assign To Instructor</Text>
+<Key id="ref-52">Assign To Instructor</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-34" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Text id="ref-53">Bookings</Text>
+<Key id="ref-54">Bookings</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-35" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Text id="ref-55">New Survey</Text>
+<Key id="ref-56">New Survey</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-36" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics2.Win.UltraWinExplorerBar.v8.1">
+<Text id="ref-57">Surveys</Text>
+<Key id="ref-58">Surveys</Key>
+</a1:UltraExplorerBarItem>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

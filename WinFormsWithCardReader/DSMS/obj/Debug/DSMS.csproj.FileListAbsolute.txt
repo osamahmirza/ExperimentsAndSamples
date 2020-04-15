@@ -1,0 +1,14 @@
+E:\DSMS\Development\Main App\DSMS\DSMS\bin\Debug\DSMS.exe.config
+E:\DSMS\Development\Main App\DSMS\DSMS\bin\Debug\DSMS.exe
+E:\DSMS\Development\Main App\DSMS\DSMS\bin\Debug\DSMS.pdb
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\ResolveAssemblyReference.cache
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSMS.Main.resources
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSMS.Properties.Resources.resources
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSMS.StudentRegister.resources
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSMS.csproj.GenerateResource.Cache
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSMS.exe.licenses
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSMS.exe
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSMS.pdb
+E:\DSMS\Development\Main App\DSMS\DSMS\bin\Debug\DSMS_DB.mdf
+E:\DSMS\Development\Main App\DSMS\DSMS\bin\Debug\DSMS_DB_log.ldf
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Main.resources

@@ -1,0 +1,100 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:UltraToolbarsStreamer id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<MenuAnimationStyle>4</MenuAnimationStyle>
+<Ribbon href="#ref-3"/>
+<ShowFullMenusDelay>500</ShowFullMenusDelay>
+<Tools href="#ref-4"/>
+</a1:UltraToolbarsStreamer>
+<a1:Ribbon id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<SelectedTab href="#ref-5"/>
+<Tabs href="#ref-6"/>
+<Visible>true</Visible>
+</a1:Ribbon>
+<a1:RootToolsCollection id="ref-4" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Count>4</Count>
+<_x0030_ href="#ref-7"/>
+<_x0031_ href="#ref-8"/>
+<_x0032_ href="#ref-9"/>
+<_x0033_ href="#ref-10"/>
+</a1:RootToolsCollection>
+<a1:RibbonTab id="ref-5" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Caption id="ref-11">Settings</Caption>
+<Groups href="#ref-12"/>
+<Key href="#ref-11"/>
+</a1:RibbonTab>
+<a1:RibbonTabCollection id="ref-6" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Count>1</Count>
+<_x0030_ href="#ref-5"/>
+</a1:RibbonTabCollection>
+<a1:ButtonTool id="ref-7" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Key id="ref-13">Grid Columns</Key>
+<SharedProps href="#ref-14"/>
+</a1:ButtonTool>
+<a1:ButtonTool id="ref-8" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Key id="ref-15">Form Fields</Key>
+<SharedProps href="#ref-16"/>
+</a1:ButtonTool>
+<a1:ButtonTool id="ref-9" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Key id="ref-17">Email Templates</Key>
+<SharedProps href="#ref-18"/>
+</a1:ButtonTool>
+<a1:ButtonTool id="ref-10" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Key id="ref-19">Set Logo</Key>
+<SharedProps href="#ref-20"/>
+</a1:ButtonTool>
+<a1:RibbonGroupCollection id="ref-12" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Count>1</Count>
+<_x0030_ href="#ref-21"/>
+</a1:RibbonGroupCollection>
+<a1:SharedProps id="ref-14" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Caption id="ref-22">Grid Columns</Caption>
+<CustomizedShortcut>0</CustomizedShortcut>
+<IsShortcutCustomized>false</IsShortcutCustomized>
+</a1:SharedProps>
+<a1:SharedProps id="ref-16" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Caption id="ref-23">Form Fields</Caption>
+<CustomizedShortcut>0</CustomizedShortcut>
+<IsShortcutCustomized>false</IsShortcutCustomized>
+</a1:SharedProps>
+<a1:SharedProps id="ref-18" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Caption id="ref-24">Email Templates</Caption>
+<CustomizedShortcut>0</CustomizedShortcut>
+<IsShortcutCustomized>false</IsShortcutCustomized>
+</a1:SharedProps>
+<a1:SharedProps id="ref-20" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Caption id="ref-25">Set Logo</Caption>
+<CustomizedShortcut>0</CustomizedShortcut>
+<IsShortcutCustomized>false</IsShortcutCustomized>
+</a1:SharedProps>
+<a1:RibbonGroup id="ref-21" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Caption id="ref-26">Customizations</Caption>
+<DialogBoxLauncherKey id="ref-27"></DialogBoxLauncherKey>
+<Tools href="#ref-28"/>
+<Key href="#ref-26"/>
+</a1:RibbonGroup>
+<a1:ToolsCollection id="ref-28" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Count>4</Count>
+<_x0030_ href="#ref-29"/>
+<_x0031_ href="#ref-30"/>
+<_x0032_ href="#ref-31"/>
+<_x0033_ href="#ref-32"/>
+</a1:ToolsCollection>
+<a1:ButtonTool id="ref-29" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Key href="#ref-13"/>
+<IsClonedTool>true</IsClonedTool>
+</a1:ButtonTool>
+<a1:ButtonTool id="ref-30" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Key href="#ref-15"/>
+<IsClonedTool>true</IsClonedTool>
+</a1:ButtonTool>
+<a1:ButtonTool id="ref-31" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Key href="#ref-17"/>
+<IsClonedTool>true</IsClonedTool>
+</a1:ButtonTool>
+<a1:ButtonTool id="ref-32" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinToolbars/Infragistics2.Win.UltraWinToolbars.v8.1">
+<Key href="#ref-19"/>
+<IsClonedTool>true</IsClonedTool>
+</a1:ButtonTool>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

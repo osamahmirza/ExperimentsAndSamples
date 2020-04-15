@@ -1,0 +1,46 @@
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\ResolveAssemblyReference.cache
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Main.resources
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Properties.Resources.resources
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.StudentRM.resources
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Students.resources
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.csproj.GenerateResource.Cache
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.exe.licenses
+E:\DSMS\Development\Main App\DSMS\DSMS\bin\Debug\DSMS_DB.mdf
+E:\DSMS\Development\Main App\DSMS\DSMS\bin\Debug\DSMS_DB_log.ldf
+E:\DSMS\Development\Main App\DSMS\DSMS\bin\Debug\DSClerk.exe.config
+E:\DSMS\Development\Main App\DSMS\DSMS\bin\Debug\DSClerk.exe
+E:\DSMS\Development\Main App\DSMS\DSMS\bin\Debug\DSClerk.pdb
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Instructor.resources
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Student.resources
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.exe
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.pdb
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Instructors.resources
+E:\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Course.resources
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\bin\Debug\DSClerk.exe.config
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.exe
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.pdb
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\ResolveAssemblyReference.cache
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Course.resources
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Instructor.resources
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Instructors.resources
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Main.resources
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Properties.Resources.resources
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.StudentRM.resources
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Student.resources
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Students.resources
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.csproj.GenerateResource.Cache
+C:\Backup\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.exe.licenses
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\ResolveAssemblyReference.cache
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Course.resources
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Instructor.resources
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Instructors.resources
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Main.resources
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Properties.Resources.resources
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.StudentRM.resources
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Student.resources
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.Students.resources
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.csproj.GenerateResource.Cache
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.exe.licenses
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.exe
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\obj\Debug\DSClerk.pdb
+C:\Backup\Research Projects\DSMS\Development\Main App\DSMS\DSMS\bin\Debug\DSClerk.exe.config
