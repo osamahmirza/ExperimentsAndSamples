@@ -1,0 +1,9 @@
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\CoinMarketCap\bin\Debug\CoinMarketCap.dll
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\CoinMarketCap\bin\Debug\CoinMarketCap.pdb
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\CoinMarketCap\bin\Debug\Data.dll
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\CoinMarketCap\bin\Debug\Data.pdb
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\CoinMarketCap\bin\Debug\Data.dll.config
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\CoinMarketCap\obj\Debug\CoinMarketCapClient.csprojResolveAssemblyReference.cache
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\CoinMarketCap\obj\Debug\CoinMarketCapClient.csproj.CoreCompileInputs.cache
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\CoinMarketCap\obj\Debug\CoinMarketCap.dll
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\CoinMarketCap\obj\Debug\CoinMarketCap.pdb

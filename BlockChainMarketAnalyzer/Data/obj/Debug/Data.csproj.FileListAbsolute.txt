@@ -1,0 +1,7 @@
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\bin\Debug\Data.dll.config
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\bin\Debug\Data.dll
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\bin\Debug\Data.pdb
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\obj\Debug\Data.dll
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\obj\Debug\Data.pdb
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache

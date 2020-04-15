@@ -1,0 +1,6 @@
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\bin\Release\Data.dll.config
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\bin\Release\Data.dll
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\bin\Release\Data.pdb
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\obj\Release\Data.dll
+F:\Research Projects\Blockchain\Market Analyzer\MarketAnalyzer\Data\obj\Release\Data.pdb

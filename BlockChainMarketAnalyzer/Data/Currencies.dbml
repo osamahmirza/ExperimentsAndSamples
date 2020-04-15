@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MarketAnalyzer" Class="CurrenciesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-8P3HFT2\SQLExpress;Initial Catalog=MarketAnalyzer;Integrated Security=True;User ID=sa" SettingsObjectName="Data.Properties.Settings" SettingsPropertyName="MarketAnalyzerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblError" Member="tblErrors">
+    <Type Name="tblError">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(2048) NOT NULL" CanBeNull="false" />
+      <Column Name="StackTrace" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGlobalMarketView" Member="tblGlobalMarketViews">
+    <Type Name="tblGlobalMarketView">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TotalMarketCapUSD" Type="System.Decimal" DbType="Decimal(25,8)" CanBeNull="true" />
+      <Column Name="Total24HVolumeUSD" Type="System.Decimal" DbType="Decimal(25,8)" CanBeNull="true" />
+      <Column Name="BTCPercentageofMarketCap" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ActiveCurrencies" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActiveAssets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActiveMarkets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TotalMarketCapConvertCurrency" Type="System.Decimal" DbType="Decimal(25,8)" CanBeNull="true" />
+      <Column Name="Total24HVolumeConvertCurrency" Type="System.Decimal" DbType="Decimal(25,8)" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCurrencyMarketView" Member="tblCurrencyMarketViews">
+    <Type Name="tblCurrencyMarketView">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CoinMarkCapID" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Symbol" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Rank" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceUSD" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="PriceBTC" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="Volume24hUSD" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="MarketCapUSD" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="AvailableSupply" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="TotalSupply" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="PercentageChange1H" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PercentageChange24H" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PercentageChange7D" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LastUpdatedUTC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PriceConvert" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="Volumne24HConvert" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="MarketCapConvert" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCurrencyTransactionLog" Member="tblCurrencyTransactionLogs">
+    <Type Name="tblCurrencyTransactionLog">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsSuccessfull" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCurrencyRankChanged" Member="tblCurrencyRankChangeds">
+    <Type Name="tblCurrencyRankChanged">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CoinMarkCapID" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OldRank" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NewRank" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OldCapUSD" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="NewCapUSD" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="IsRankUp" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsCapUp" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCurrencyView" Member="tblCurrencyViews">
+    <Type Name="tblCurrencyView">
+      <Column Name="CoinMarkCapID" Type="System.String" DbType="VarChar(256) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Symbol" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Rank" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MarketCapUSD" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="AvailableSupply" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="TotalSupply" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="PriceUSD" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="PriceBTC" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="Volume24hUSD" Type="System.Decimal" DbType="Decimal(25,10)" CanBeNull="true" />
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeleteTransactionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PercentageChange1H" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PercentageChange24H" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PercentageChange7D" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LastUpdatedUTC" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

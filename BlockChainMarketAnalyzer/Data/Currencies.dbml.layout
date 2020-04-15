@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Currencies">
+  <DataContextMoniker Name="/CurrenciesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dc595f6f-14ab-4758-8e52-152f68e386c7" absoluteBounds="8.75, 1.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/CurrenciesDataContext/tblError" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a6b9dfe-7e1e-465b-ba4e-c47cbdd59dd0" absoluteBounds="8.765, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a9265fae-285d-4ec0-9a07-8d4fb50c604b" absoluteBounds="3.5, 1.625, 2.625, 3.1170068359375">
+      <DataClassMoniker Name="/CurrenciesDataContext/tblGlobalMarketView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d590495-c8ca-4ab2-af82-26ca9f779e12" absoluteBounds="3.5149999999999997, 2.085, 2.5949999999999998, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f2afa0c-1912-4d72-b5cf-f5f2aac8afe4" absoluteBounds="1.25, 1.625, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/CurrenciesDataContext/tblCurrencyMarketView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="023ab899-98fd-4f10-838f-dc5c3a163aa9" absoluteBounds="1.2650000000000001, 2.085, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d3f12d6-b6ca-4601-b239-03123a58c3c7" absoluteBounds="3.75, 5.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CurrenciesDataContext/tblCurrencyTransactionLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fdd60dc2-dbcc-42da-9c24-fa27e40b8860" absoluteBounds="3.765, 5.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6ab3d6b3-f443-464c-8cec-3c57b4debf26" absoluteBounds="8.75, 3.375, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/CurrenciesDataContext/tblCurrencyRankChanged" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f4e96b7-7a0a-4bb2-adaa-9a472e042b95" absoluteBounds="8.765, 3.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96457e2e-bd33-45dc-8572-ac40eb0e14d3" absoluteBounds="6.375, 1.625, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/CurrenciesDataContext/tblCurrencyView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5720e614-c913-4cb1-b35f-5063f91b3e0a" absoluteBounds="6.39, 2.085, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
