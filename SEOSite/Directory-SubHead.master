@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Directory-SubHead.master.cs"
+    Inherits="Main_SubHead" %>
+
+<%@ Register Src="UserControls/ucTopNavItems.ascx" TagName="ucTopNavItems" TagPrefix="uc1" %>
+<%@ Register Src="UserControls/ucMessageBox.ascx" TagName="ucMessageBox" TagPrefix="uc1" %>
+<%@ Register Src="UserControls/ucPageHeader.ascx" TagName="ucPageHeader" TagPrefix="uc2" %>
+<%@ Register Src="UserControls/ucTopMenu.ascx" TagName="ucTopMenu" TagPrefix="uc3" %>
+<%@ Register Src="UserControls/ucMediaTopBar.ascx" TagName="ucMedia" TagPrefix="uc4" %>
+<%@ Register src="UserControls/ucFooterShortcuts.ascx" tagname="ucFooterShortcuts" tagprefix="uc5" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>A New Web Order - Low Cost and Effective Web Marketing VSEO</title>
+    <link href="App_Themes/Default/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="topbarsmall">
+        <div id="TopSection">
+            <h1 id="sitename">
+                <span>
+                    <asp:HyperLink runat="server" ID="header" NavigateUrl="~/Default.aspx">a</asp:HyperLink></span><asp:HyperLink
+                        runat="server" ID="header1" NavigateUrl="~/Default.aspx">NewWebOrder</asp:HyperLink><span><asp:HyperLink
+                            runat="server" ID="header3" NavigateUrl="~/Default.aspx">.com</asp:HyperLink></span></h1>
+            <div id="topbarnav">
+                <uc1:ucTopNavItems ID="ucTopNavItems1" runat="server" />
+            </div>
+            <div class="clear">
+            </div>
+            <%--<uc3:ucTopMenu ID="ucTopMenu1" runat="server" />--%>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="wrap">
+        <uc2:ucPageHeader ID="ucPageHeader1" runat="server" />
+        <uc1:ucMessageBox ID="ucMessageBox1" runat="server" />
+        <div style="padding: 10px">
+        </div>
+        <uc4:ucMedia ID="ucMedia1" runat="server" />
+        <div style="padding: 10px">
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+&nbsp;<div id="credit">
+        &copy; www.anewweborder.com &nbsp; <a href="ANewWebOrder-Privacy-Policy.aspx">Privacy
+            Policy</a> | <a href="ANewWebOrder-Service-Terms.aspx">Terms of Service</a>
+    </div>
+    </form>
+</body>
+</html>

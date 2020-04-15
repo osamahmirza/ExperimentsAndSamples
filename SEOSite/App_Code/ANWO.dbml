@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="anewweborder" EntityNamespace="ANewWebOrder" ContextNamespace="ANewWebOrder" Class="ANWODataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost;Initial Catalog=anewweborder;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ANewWebOrderConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tlkpGeographicScope" Member="tlkpGeographicScopes">
+    <Type Name="tlkpGeographicScope">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpGeographicScope_tblCampaign" Member="tblCampaigns" ThisKey="ID" OtherKey="GeographicScopeID" Type="tblCampaign" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCampaignConnect" Member="tblCampaignConnects">
+    <Type Name="tblCampaignConnect">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ConnectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpConnect_tblCampaignConnect" Member="tlkpConnect" ThisKey="ConnectID" OtherKey="ID" Type="tlkpConnect" IsForeignKey="true" />
+      <Association Name="tblCampaign_tblCampaignConnect" Member="tblCampaign" ThisKey="CampaignID" OtherKey="ID" Type="tblCampaign" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLink" Member="tblLinks">
+    <Type Name="tblLink">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="tblCampaign_tblLink" Member="tblCampaign" ThisKey="CampaignID" OtherKey="ID" Type="tblCampaign" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProductOrService" Member="tblProductOrServices">
+    <Type Name="tblProductOrService">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductOrService" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SearchPhraseForProductOrService" Type="System.String" DbType="NVarChar(155) NOT NULL" CanBeNull="false" />
+      <Association Name="tblCampaign_tblProductOrService" Member="tblCampaign" ThisKey="CampaignID" OtherKey="ID" Type="tblCampaign" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlkpAlertPriority" Member="tlkpAlertPriorities">
+    <Type Name="tlkpAlertPriority">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpAlertPriority_tblAlert" Member="tblAlerts" ThisKey="ID" OtherKey="PriorityID" Type="tblAlert" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlkpConnect" Member="tlkpConnects">
+    <Type Name="tlkpConnect">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="ShareLink" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Association Name="tlkpConnect_tblCampaignConnect" Member="tblCampaignConnects" ThisKey="ID" OtherKey="ConnectID" Type="tblCampaignConnect" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Membership" Member="aspnet_Memberships">
+    <Type Name="aspnet_Membership">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordFormat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordSalt" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MobilePIN" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="LoweredEmail" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PasswordQuestion" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PasswordAnswer" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLockedOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLoginDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastPasswordChangedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLockoutDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAttemptCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAttemptWindowStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAnswerAttemptCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAnswerAttemptWindowStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="aspnet_User_aspnet_Membership" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAgreement" Member="tblAgreements">
+    <Type Name="tblAgreement">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Agreement" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AgreementTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblAgreement_tblProfile" Member="tblProfiles" ThisKey="ID" OtherKey="AgreementID" Type="tblProfile" />
+      <Association Name="tblAgreement_tblCampaign" Member="tblCampaigns" ThisKey="ID" OtherKey="AgreementID" Type="tblCampaign" />
+      <Association Name="tlkpAgreementType_tblAgreement" Member="tlkpAgreementType" ThisKey="AgreementTypeID" OtherKey="ID" Type="tlkpAgreementType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlkpAgreementType" Member="tlkpAgreementTypes">
+    <Type Name="tlkpAgreementType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpAgreementType_tblAgreement" Member="tblAgreements" ThisKey="ID" OtherKey="AgreementTypeID" Type="tblAgreement" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwCampaignConnect" Member="vwCampaignConnects">
+    <Type Name="vwCampaignConnect">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ConnectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwCampaign" Member="vwCampaigns">
+    <Type Name="vwCampaign">
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="GeographicScopeName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GeographicScopeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetAudiance" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="LongDescription" Type="System.String" DbType="NVarChar(2048) NOT NULL" CanBeNull="false" />
+      <Column Name="MissionStatement" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(69) NOT NULL" CanBeNull="false" />
+      <Column Name="Header" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="CompaignEmail" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="CompaignPhone" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="CompaignFax" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="LastPaymentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastReviewDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPendingSetup" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="GeographicScope" Type="System.String" DbType="NVarChar(2048)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AgreementID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAlert" Member="tblAlerts">
+    <Type Name="tblAlert">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PriorityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsRead" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DateRead" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpAlertPriority_tblAlert" Member="tlkpAlertPriority" ThisKey="PriorityID" OtherKey="ID" Type="tlkpAlertPriority" IsForeignKey="true" />
+      <Association Name="tblProfile_tblAlert" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProfile" Member="tblProfiles">
+    <Type Name="tblProfile">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MiddleInitials" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="StreetAddress" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Apartment" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="POBox" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Phone1" Type="System.String" DbType="NVarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone1Ext" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Phone2" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Phone2Ext" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AgreementID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblProfile_tblAlert" Member="tblAlerts" ThisKey="ID" OtherKey="ProfileID" Type="tblAlert" />
+      <Association Name="tblProfile_tblInvoice" Member="tblInvoices" ThisKey="ID" OtherKey="ProfileID" Type="tblInvoice" />
+      <Association Name="tblProfile_tblCampaign" Member="tblCampaigns" ThisKey="ID" OtherKey="ProfileID" Type="tblCampaign" />
+      <Association Name="tblAgreement_tblProfile" Member="tblAgreement" ThisKey="AgreementID" OtherKey="ID" Type="tblAgreement" IsForeignKey="true" />
+      <Association Name="tblPaypalCountry_tblProfile" Member="tblPaypalCountry" ThisKey="CountryID" OtherKey="ID" Type="tblPaypalCountry" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSetting" Member="tblSettings">
+    <Type Name="tblSetting">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SettingKey" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Setting" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Users" Member="aspnet_Users">
+    <Type Name="aspnet_User">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredUserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileAlias" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsAnonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_aspnet_Membership" Member="aspnet_Membership" ThisKey="UserId" OtherKey="UserId" Type="aspnet_Membership" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInvoice" Member="tblInvoices">
+    <Type Name="tblInvoice">
+      <Column Name="ID" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AutoID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlanID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentStatus" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="AddressStatus" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="PayerStatus" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="PayerEmail" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="PayerID" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="AddressName" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="AddressCountry" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="AddressCountryCode" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="AddressZip" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AddressState" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="AddressCity" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="AddressStreet" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Business" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="ReceiverEmail" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="ResidenceCountry" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="ItemNumber" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Shipping" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Tax" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MCCurrency" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="MCFee" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MCGross" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MCGross1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TxnType" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TxnID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NotifyVersion" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FraudManagementPendingFilter" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="PendingReason" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ProtectionEligibility" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ReasonCode" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ParentTxnId" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="PaymentDate" Type="System.String" DbType="VarChar(28)" CanBeNull="true" />
+      <Column Name="ReceiptID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Invoice" Type="System.String" DbType="VarChar(92)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PaypalIP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CustomerIP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PromotionCode" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ReceiverID" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Association Name="tblProfile_tblInvoice" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+      <Association Name="tblPlan_tblInvoice" Member="tblPlan" ThisKey="PlanID" OtherKey="ID" Type="tblPlan" IsForeignKey="true" />
+      <Association Name="tblCampaign_tblInvoice" Member="tblCampaign" ThisKey="CampaignID" OtherKey="ID" Type="tblCampaign" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPlan" Member="tblPlans">
+    <Type Name="tblPlan">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlanDurationUnitTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlanTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Units" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="tblPlan_tblInvoice" Member="tblInvoices" ThisKey="ID" OtherKey="PlanID" Type="tblInvoice" />
+      <Association Name="tlkpPlanDurationUnitType_tblPlan" Member="tlkpPlanDurationUnitType" ThisKey="PlanDurationUnitTypeID" OtherKey="ID" Type="tlkpPlanDurationUnitType" IsForeignKey="true" />
+      <Association Name="tlkpPlanType_tblPlan" Member="tlkpPlanType" ThisKey="PlanTypeID" OtherKey="ID" Type="tlkpPlanType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlkpPlanDurationUnitType" Member="tlkpPlanDurationUnitTypes">
+    <Type Name="tlkpPlanDurationUnitType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpPlanDurationUnitType_tblPlan" Member="tblPlans" ThisKey="ID" OtherKey="PlanDurationUnitTypeID" Type="tblPlan" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlkpPlanType" Member="tlkpPlanTypes">
+    <Type Name="tlkpPlanType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpPlanType_tblPlan" Member="tblPlans" ThisKey="ID" OtherKey="PlanTypeID" Type="tblPlan" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlkpPageContentType" Member="tlkpPageContentTypes">
+    <Type Name="tlkpPageContentType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpPageContentType_tblPageContent" Member="tblPageContents" ThisKey="ID" OtherKey="PageContentTypeID" Type="tblPageContent" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlkpPage" Member="tlkpPages">
+    <Type Name="tlkpPage">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpPage_tblPageContent" Member="tblPageContents" ThisKey="ID" OtherKey="PageID" Type="tblPageContent" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPageContent" Member="tblPageContents">
+    <Type Name="tblPageContent">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageContentTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageContent" Type="System.String" DbType="VarChar(4000) NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpPage_tblPageContent" Member="tlkpPage" ThisKey="PageID" OtherKey="ID" Type="tlkpPage" IsForeignKey="true" />
+      <Association Name="tlkpPageContentType_tblPageContent" Member="tlkpPageContentType" ThisKey="PageContentTypeID" OtherKey="ID" Type="tlkpPageContentType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUserActivationRequest" Member="tblUserActivationRequests">
+    <Type Name="tblUserActivationRequest">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="ExpirationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsFulfilled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEmailTemplate" Member="tblEmailTemplates">
+    <Type Name="tblEmailTemplate">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TemplateKey" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Template" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="FromEmail" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPaypalCountry" Member="tblPaypalCountries">
+    <Type Name="tblPaypalCountry">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ISO2" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ISO3" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="version" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="tblPaypalCountry_tblProfile" Member="tblProfiles" ThisKey="ID" OtherKey="CountryID" Type="tblProfile" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlkpCategory" Member="tlkpCategories">
+    <Type Name="tlkpCategory">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Association Name="tlkpCategory_tblCampaign" Member="tblCampaigns" ThisKey="ID" OtherKey="CategoryID" Type="tblCampaign" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCampaign" Member="tblCampaigns">
+    <Type Name="tblCampaign">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GeographicScopeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetAudiance" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="LongDescription" Type="System.String" DbType="NVarChar(2048) NOT NULL" CanBeNull="false" />
+      <Column Name="MissionStatement" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(69) NOT NULL" CanBeNull="false" />
+      <Column Name="Header" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="SitemapPath" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="CompaignEmail" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="CompaignPhone" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="CompaignFax" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="LastPaymentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastReviewDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPendingSetup" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="GeographicScope" Type="System.String" DbType="NVarChar(2048)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AgreementID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Keywords" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="tblCampaign_tblCampaignConnect" Member="tblCampaignConnects" ThisKey="ID" OtherKey="CampaignID" Type="tblCampaignConnect" />
+      <Association Name="tblCampaign_tblLink" Member="tblLinks" ThisKey="ID" OtherKey="CampaignID" Type="tblLink" />
+      <Association Name="tblCampaign_tblProductOrService" Member="tblProductOrServices" ThisKey="ID" OtherKey="CampaignID" Type="tblProductOrService" />
+      <Association Name="tblCampaign_tblInvoice" Member="tblInvoices" ThisKey="ID" OtherKey="CampaignID" Type="tblInvoice" />
+      <Association Name="tblAgreement_tblCampaign" Member="tblAgreement" ThisKey="AgreementID" OtherKey="ID" Type="tblAgreement" IsForeignKey="true" />
+      <Association Name="tblProfile_tblCampaign" Member="tblProfile" ThisKey="ProfileID" OtherKey="ID" Type="tblProfile" IsForeignKey="true" />
+      <Association Name="tlkpCategory_tblCampaign" Member="tlkpCategory" ThisKey="CategoryID" OtherKey="ID" Type="tlkpCategory" IsForeignKey="true" />
+      <Association Name="tlkpGeographicScope_tblCampaign" Member="tlkpGeographicScope" ThisKey="GeographicScopeID" OtherKey="ID" Type="tlkpGeographicScope" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.UpdateCampaign" Method="UpdateCampaign">
+    <Parameter Name="CampaignXML" Parameter="campaignXML" Type="System.String" DbType="NVarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

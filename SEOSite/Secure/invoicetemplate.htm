@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<body>
+<div style="border:solid 1px black; padding:5px">
+<h3>aNewWebOrder.com</h3>
+<h2>Congratulations! Now you have your own CyberHawk.</h2>
+    <p>
+        <#DATETIMELONG#></p>
+        <p>
+        Dear <#CUSTOMERNAME#>,
+        </p>
+        <p>Thank you for ordering from aNewWebOrder.com! This email contains important information regarding your recent purchase – please save it for future reference.</p>
+        
+    <table style="background-color:#F0F0F0; width:450px">
+        <tr>
+            <td style="text-align:right">
+                LOGIN NAME:</td>
+            <td>
+                <#LOGINNAME#></td>
+        </tr>
+        <tr>
+            <td style="text-align:right">
+                RECEIPT NUMBER:&nbsp;</td>
+            <td>
+	<#RECEIPTNUMBER#>
+</td>
+        </tr>
+        <tr>
+            <td style="text-align:right">
+                ORDER TOTAL:</td>
+            <td>
+	<#ORDERTOTAL#></td>
+        </tr>
+        <tr>
+            <td style="text-align:right">
+                CUSTOMER SERVICE:</td>
+            <td>
+		<#SALESEMAIL#></td>
+        </tr>
+    </table>
+    
+    
+    <table style="width:450px">
+        <tr>
+            <td style="width:50px">
+                <span style="text-decoration:underline">QTY</span></td>
+            <td>
+                <span style="text-decoration:underline">ITEM</span></td></td>
+            <td style="width:65px">
+                <span style="text-decoration:underline">PRICE</span></td></td>
+        </tr>
+        <tr>
+            <td>
+                <#QTY#></td>
+            <td>
+                <#PLAN#></td>
+            <td>
+                <#PRICE#></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <hr /></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td style="text-align:right">
+                Subtotal:</td>
+            <td>
+                <#SUBTOTAL#></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td style="text-align:right">
+                Shipping & Handling:</td>
+            <td>
+                <#SHIPPING#></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td style="text-align:right">
+                Tax:</td>
+            <td>
+                <#TAX#></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td style="text-align:right">
+                Total:</td>
+            <td>
+                <#TOTAL#></td>
+        </tr>
+    </table>
+    
+    
+    <hr />
+    
+    
+    <table style="background-color:#F0F0F0; width:450px">
+        <tr>
+            <td style="text-align:left" colspan="2">
+                <b>Important information concerning your purchase:</b></td>
+        </tr>
+        <tr>
+            <td style="text-align:left">
+                CyberHawk SLA</td>
+            <td>
+                <#CYBERHAWKSLA#></td>
+        </tr>
+        <tr>
+            <td style="text-align:left">
+                HowTo use CyberHawk</td>
+            <td>
+                <#HOWTO#></td>
+        </tr>
+        <tr>
+            <td style="text-align:left">
+                Help</td>
+            <td>
+                <#HELP#></td>
+        </tr>
+        </table>
+        
+    
+<p>
+    To manage your free or purchased CyberHawk(s):
+    </p>
+<ol>
+    <li>Go to the <a href="http://www.anewweborder.com">aNewWebOrder.com</a> home page.
+    </li>
+    <li>Click &quot;My Account&quot; hyperlink. (signin if you need to)</li>
+    <li>Click on &quot;CyberHawks&quot; hyperlink.</li>
+</ol>
+       <p>To retrieve your password, click the "Forgot Your Password?" hyperlink in the login area on the home page</p>
+       <p>Questions?&nbsp; <a href="http://www.aNewWebOrder.com/anewweborder-contact-us.aspx">www.anewweborder.com/anewweborder-contact-us.aspx</a> </p>
+       Sincerely,
+       <br />
+       aNewWebOrder.com, Inc
+</div>    
+<p>
+    Prices are current as of <#DATETIMESHORT#>, and may be changed without notice.</p>
+</body>
+</html>
