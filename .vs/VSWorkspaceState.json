@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BlockChainMarketAnalyzer",
+    "\\BlockChainMarketAnalyzer\\TestClient"
   ],
-  "SelectedNode": "\\BusinessDirectory",
+  "SelectedNode": "\\BlockChainMarketAnalyzer\\TestClient\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
